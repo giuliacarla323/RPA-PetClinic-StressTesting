@@ -1,0 +1,389 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ProccesWorkFlow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="TestId" Type="InArgument(x:String)" />
+    <x:Property Name="First_Name" Type="InArgument(x:String)" />
+    <x:Property Name="Last_Name" Type="InArgument(x:String)" />
+    <x:Property Name="Address" Type="InArgument(x:String)" />
+    <x:Property Name="City" Type="InArgument(x:String)" />
+    <x:Property Name="Telephone" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>869.6,4709.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProccesWorkFlow_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.CSV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="ProccesWorkFlow" sap:VirtualizedContainerService.HintSize="707.2,4644.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="ownerName" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="644.8,104.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Sequence>
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="644.8,2213.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: PetClinic :: a Spring Framework demonstration" sap:VirtualizedContainerService.HintSize="483.2,2101.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="b296a3e3-ff18-430e-b3c9-dfd839ea5d87" Version="V1">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1884.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add Owner'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b296a3e3-ff18-430e-b3c9-dfd839ea5d87" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/find" DesignTimeRectangle="88, 478, 142, 49" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Add Owner'" FullSelectorArgument="&lt;webctrl aaname='Add Owner' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Add Owner' tag='A' type='' class='btn btn-primary' check:innerText='Add Owner' /&gt;" Guid="9e1d5c8d-f7f7-48c8-9cdb-7d1fd73c312a" InformativeScreenshot="4f1bbd74cb8966d040d6a78bbb678df3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="82, 263, 900, 339" ElementType="InputBox" FriendlyName="'Find Owners Last name'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='DIV' class='container xd-container' aaname='                           ' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="b296a3e3-ff18-430e-b3c9-dfd839ea5d87" Text="[First_Name]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/new" DesignTimeRectangle="150, 413, 1365, 47" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT firstName'" FullSelectorArgument="&lt;webctrl id='firstName' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='firstName' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="c82ecf6c-20a9-475c-b854-c3e1525f3577" InformativeScreenshot="6b7f7125abd9f29f2d530e4c4545b172.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="150, 390, 273, 23" ElementType="Text" FriendlyName="'First Name'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='col-sm-2 control-label' aaname='First Name' check:innerText='First Name' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="b296a3e3-ff18-430e-b3c9-dfd839ea5d87" Text="[Last_Name]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/new" DesignTimeRectangle="150, 483, 1365, 47" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT lastName'" FullSelectorArgument="&lt;webctrl id='lastName' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='lastName' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="08c936e3-10b5-45ad-8e8f-c88e1d35cd74" InformativeScreenshot="fe0c34c1a8f0215b672edbc66ef170e0.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="150, 460, 273, 23" ElementType="Text" FriendlyName="'Last Name'" FullSelectorArgument="&lt;webctrl aaname='Last Name' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Last Name' tag='LABEL' type='' class='col-sm-2 control-label' check:innerText='Last Name' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Address'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="b296a3e3-ff18-430e-b3c9-dfd839ea5d87" Text="[Address]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/new" DesignTimeRectangle="157, 486, 552, 47" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT address'" FullSelectorArgument="&lt;webctrl id='address' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='address' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="20b65354-b702-4325-86f6-31051693af3a" InformativeScreenshot="9bcd4b3a934c391756c37d4c9377a27f.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="157, 463, 110, 23" ElementType="Text" FriendlyName="'Address'" FullSelectorArgument="&lt;webctrl aaname='Address' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Address' tag='LABEL' type='' class='col-sm-2 control-label' check:innerText='Address' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'City'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="b296a3e3-ff18-430e-b3c9-dfd839ea5d87" Text="[City]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/new" DesignTimeRectangle="157, 556, 552, 47" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT city'" FullSelectorArgument="&lt;webctrl id='city' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='city' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="550412dd-330d-4cfd-9a20-59757d2cd551" InformativeScreenshot="c3f1e5906db991978710fabbe7338964.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="157, 533, 110, 23" ElementType="Text" FriendlyName="'City'" FullSelectorArgument="&lt;webctrl aaname='City' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='City' tag='LABEL' type='' class='col-sm-2 control-label' check:innerText='City' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Telephone'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="b296a3e3-ff18-430e-b3c9-dfd839ea5d87" Text="[Telephone]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/new" DesignTimeRectangle="45, 483, 740, 47" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT telephone'" FullSelectorArgument="&lt;webctrl id='telephone' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='telephone' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="eff1780b-07ef-41a8-9dd7-89cd94d3adbe" InformativeScreenshot="cac203f6e5418cc7c9846877552f5981.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="45, 459, 148, 23" ElementType="Text" FriendlyName="'Telephone'" FullSelectorArgument="&lt;webctrl aaname='Telephone' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Telephone' tag='LABEL' type='' class='col-sm-2 control-label' check:innerText='Telephone' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                    <uix:TargetAnchorable.PointOffset>
+                      <uix:PointOffset Position="BottomLeft" X="61" Y="-16" />
+                    </uix:TargetAnchorable.PointOffset>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add Owner'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b296a3e3-ff18-430e-b3c9-dfd839ea5d87" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/new" DesignTimeRectangle="45, 736, 142, 49" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Add Owner'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn btn-primary' aaname='Add Owner' check:innerText='Add Owner' /&gt;" Guid="ca319ec2-41a5-4106-94b0-513b2c8633c3" InformativeScreenshot="7212dca1723f80325b73818484ecf139.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="45, 721, 740, 64" FriendlyName="'Add Owner'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div' idx='6' parentid='add-owner-form' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='col-sm-offset-2 col-sm-10' parentid='add-owner-form' tag='DIV' aaname='                                      ' check:innerText='Add Owner' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="387.2,82.4" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_3" Version="V3" />
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHnSURBVDhPhZNLSxtRGIajuHWl3foDBHeCFYtQxV1dKYLdCIoLL9BiF5FqFkUFb7iy4M5rEVvFG95CB+uitEVq8UaiUSPRBJnUeInGpHHy+n2Hc9AM0b7wkJk53/MmZzJjMadiMDuT6CY2iSBxSvwiGolUOfOKSBOCCl1IIboIg8AjHBBZxA5hk6qQk4hxIpFkJlQ7WsCfx0SyKmiSi/+F5T3/JiqHn/N5PssZRFgNPIV1sgS+czc4PdpbvvaBC2wPhxLxfroMi9ufEDX+CZmz4priNY0L+A7HCc0z5Zj404ct309c3gSkcp9YzID3/IBnvVygK7FhvBjOkzU5ljh60CsKIrdhdiJcEFIF/I1PJRQJ4qvzszg2qIScGy7YVQUP92jO3ysfOu21CFzr4vzkwsOOgwuGVAHvy5xbIwrN+QU1oy+xeqjJq8Dc1iA7H7kgXxX0frMiHA2J/R0FXJjd6Me7iWJUDefi+/6cVCFubP1YETsv1IM0wwWtC1VoX6oRZYqW+UocnjqkCviDPthmX/Oag0hSBc/aFqrdMcTEUKe9TvyVvz3LuIpcQL88xppnBf0/2lA9kscyvy+FQlZx6esFqqDDHv8rTJwRpVKLD7k59MS9oYEBwk2oN9NPaISVSJfjFIvlDvxeddBB1E2KAAAAAElFTkSuQmCC" InformativeScreenshot="9fe95ef97b5b7e282d09137ad48105e9.jpg" Selector="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" Title="PetClinic :: a Spring Framework demonstration" Url="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/find" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="644.8,2134.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: PetClinic :: a Spring Framework demonstration" sap:VirtualizedContainerService.HintSize="582.4,2022.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="dc130c34-d44a-44b2-8fa6-55962c621630" Version="V1">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548.8,1805.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Last name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="486.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="dc130c34-d44a-44b2-8fa6-55962c621630" Text="[Last_Name]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/find" DesignTimeRectangle="150, 413, 1365, 47" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT lastName'" FullSelectorArgument="&lt;webctrl id='lastName' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='lastName' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="5aeb05ec-0968-4125-b046-83e28a4602b7" InformativeScreenshot="98cdacdc8979e32a3f4e3c014efd496b.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="150, 390, 273, 23" ElementType="Text" FriendlyName="'Last name'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='col-sm-2 control-label' aaname='Last name ' check:innerText='Last name' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Find Owner'" sap:VirtualizedContainerService.HintSize="486.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dc130c34-d44a-44b2-8fa6-55962c621630" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/find" DesignTimeRectangle="55, 456, 144, 49" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Find Owner'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn btn-primary' aaname='Find Owner' check:innerText='Find Owner' /&gt;" Guid="99fb0157-2b64-4c7b-a740-af91950a81c8" InformativeScreenshot="cb6c1cecf5d43092ca16bf32af97fab7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="55, 441, 740, 64" FriendlyName="'Find Owner'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div' idx='2' parentid='search-owner-form' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='col-sm-offset-2 col-sm-10' parentid='search-owner-form' tag='DIV' aaname='                              ' check:innerText='Find Owner' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Name'" sap:VirtualizedContainerService.HintSize="486.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dc130c34-d44a-44b2-8fa6-55962c621630" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners?lastName=lasttest_1" DesignTimeRectangle="150, 445, 100, 46" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'firsttest_1 lasttest_1'" FullSelectorArgument="&lt;webctrl id='ownersTable' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ownersTable' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='' aaname='firsttest_1 lasttest_1' check:innerText='firsttest_1 lasttest_1' /&gt;" Guid="cbea1f10-345a-4513-9c23-2761ea99f948" ImageBase64="" InformativeScreenshot="136b5de81367fdd0a60e90978397b2c2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="140, 433, 188, 68" FriendlyName="'firsttest_1 lasttest_1'" FullSelectorArgument="&lt;webctrl id='ownersTable' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ownersTable' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' aaname='                                      ' check:innerText='firsttest_1 lasttest_1' /&gt;" ImageBase64="" SearchSteps="Selector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click  Edit Owner" sap:VirtualizedContainerService.HintSize="486.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dc130c34-d44a-44b2-8fa6-55962c621630" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/1" DesignTimeRectangle="45, 583, 140, 49" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Edit Owner'" FullSelectorArgument="&lt;webctrl aaname='Edit Owner' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Edit Owner' tag='A' type='' class='btn btn-primary' check:innerText='Edit Owner' /&gt;" Guid="d0c281a1-dd25-448f-8b91-b0e38f77bfe0" InformativeScreenshot="e2aa49db1968e42a7460d42935e4db13.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="190, 583, 159, 49" ElementType="Text" FriendlyName="'Add New Pet'" FullSelectorArgument="&lt;webctrl aaname='Add New Pet' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Add New Pet' tag='A' type='' class='btn btn-primary' check:innerText='Add New Pet' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NGetText DisplayName="Get Text 'firsttest_1'" sap:VirtualizedContainerService.HintSize="486.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="dc130c34-d44a-44b2-8fa6-55962c621630" Version="V1">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/1/edit" DesignTimeRectangle="45, 394, 740, 47" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'George'" FullSelectorArgument="&lt;webctrl id='firstName' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='firstName' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="b857ee4c-187c-47a1-8a21-ed3e55530ac0" InformativeScreenshot="325251adc2d05d82df43bc73f77e4d40.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="45, 371, 148, 23" ElementType="Text" FriendlyName="'First Name'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='col-sm-2 control-label' aaname='First Name' check:innerText='First Name' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+                <uix:NGetText.Text>
+                  <OutArgument x:TypeArguments="x:String">[ownerName]</OutArgument>
+                </uix:NGetText.Text>
+              </uix:NGetText>
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="486.4,641.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch.Try>
+                  <Sequence sap:VirtualizedContainerService.HintSize="449.6,410.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" Expression="[ownerName = First_Name]" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False" />
+                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="DataTableResults.Rows.Add(&quot;TestAddFind&quot;, &quot;Success&quot;, &quot;Verification passed. The expression 'ownerName = First_Name' returned 'True'.&quot;, DateTime.Now)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="387.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+                      <ui:InvokeCode.Arguments>
+                        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DataTableResults">[DataTableResults]</InOutArgument>
+                      </ui:InvokeCode.Arguments>
+                    </ui:InvokeCode>
+                  </Sequence>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="452.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Sequence sap:VirtualizedContainerService.HintSize="496,708" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,144" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Failed verification: Owner name doesn't match&quot;]" />
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code=" DataTableResults.Rows.Add(TestId, &quot;Failed&quot;,  exception, DateTime.Now)&#xD;&#xA;    Throw New BusinessRuleException(&quot;Nu s-a gasit ownerul adaugat.&quot;)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="433.6,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                          <ui:InvokeCode.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="exception">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="TestId">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TestId" />
+                            </InArgument>
+                            <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DataTableResults">
+                              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DataTableResults" />
+                            </InOutArgument>
+                          </ui:InvokeCode.Arguments>
+                        </ui:InvokeCode>
+                        <ui:AppendWriteCsvFile PathResource="{x:Null}" AddHeaders="True" CsvAction="Write" DataTable="[DataTableResults]" Delimitator="Comma" DelimitatorForViewModel="Comma" DisplayName="Write CSV" FilePath="D:\Facultate\An3\RPA\TestResults.csv" sap:VirtualizedContainerService.HintSize="433.6,204" sap2010:WorkflowViewState.IdRef="AppendWriteCsvFile_1" ShouldQuote="True" />
+                      </Sequence>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHnSURBVDhPhZNLSxtRGIajuHWl3foDBHeCFYtQxV1dKYLdCIoLL9BiF5FqFkUFb7iy4M5rEVvFG95CB+uitEVq8UaiUSPRBJnUeInGpHHy+n2Hc9AM0b7wkJk53/MmZzJjMadiMDuT6CY2iSBxSvwiGolUOfOKSBOCCl1IIboIg8AjHBBZxA5hk6qQk4hxIpFkJlQ7WsCfx0SyKmiSi/+F5T3/JiqHn/N5PssZRFgNPIV1sgS+czc4PdpbvvaBC2wPhxLxfroMi9ufEDX+CZmz4priNY0L+A7HCc0z5Zj404ct309c3gSkcp9YzID3/IBnvVygK7FhvBjOkzU5ljh60CsKIrdhdiJcEFIF/I1PJRQJ4qvzszg2qIScGy7YVQUP92jO3ysfOu21CFzr4vzkwsOOgwuGVAHvy5xbIwrN+QU1oy+xeqjJq8Dc1iA7H7kgXxX0frMiHA2J/R0FXJjd6Me7iWJUDefi+/6cVCFubP1YETsv1IM0wwWtC1VoX6oRZYqW+UocnjqkCviDPthmX/Oag0hSBc/aFqrdMcTEUKe9TvyVvz3LuIpcQL88xppnBf0/2lA9kscyvy+FQlZx6esFqqDDHv8rTJwRpVKLD7k59MS9oYEBwk2oN9NPaISVSJfjFIvlDvxeddBB1E2KAAAAAElFTkSuQmCC" InformativeScreenshot="9fe95ef97b5b7e282d09137ad48105e9.jpg" Selector="&lt;html app='chrome.exe' title='PetClinic :: a Spring Framework demonstration' /&gt;" Title="PetClinic :: a Spring Framework demonstration" Url="https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/owners/find" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>

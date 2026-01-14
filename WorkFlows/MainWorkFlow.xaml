@@ -1,0 +1,436 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="MainWorkFlow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_BrowserType" Type="InArgument(ui:BrowserType)" />
+    <x:Property Name="in_dataRow" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="City" Type="InOutArgument(x:String)" />
+    <x:Property Name="Address" Type="InOutArgument(x:String)" />
+    <x:Property Name="Telephone" Type="InOutArgument(x:String)" />
+    <x:Property Name="Last_Name" Type="InOutArgument(x:String)" />
+    <x:Property Name="First_Name" Type="InOutArgument(x:String)" />
+    <x:Property Name="TestId" Type="InOutArgument(x:String)" />
+    <x:Property Name="out_DataTable" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>869.6,3440</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>MainWorkFlow_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.CSV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="MainWorkFlow" sap:VirtualizedContainerService.HintSize="611.2,3375.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[out_DataTable]" Name="DataTableValoriTest" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="548.8,391.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InputWorkFlow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InputWorkFlow.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DataTable">
+              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DataTableValoriTest" />
+            </OutArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="si:FileNotFoundException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="si:FileNotFoundException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="si:FileNotFoundException" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Eroare intampinata in inputworkflow&quot;]" />
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="s:FormatException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:FormatException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:FormatException" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Eroare intampinata in inputworkflow&quot;]" />
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Eroare intampinata in inputworkflow&quot;]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="486.4,531.2" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="449.6,276.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="&#xD;&#xA;For Each row As DataRow In DataTableValoriTest.Rows&#xD;&#xA;    Try&#xD;&#xA;        ' Verificăm fiecare coloană pentru null, gol sau valoarea -1&#xD;&#xA;        If String.IsNullOrEmpty(row(&quot;TestId&quot;)?.ToString()) Then&#xD;&#xA;            Throw New BusinessRuleException(&quot;Test_Id cannot be null or empty.&quot;)&#xD;&#xA;        End If&#xD;&#xA;        If row(&quot;TestId&quot;).ToString() = &quot;-1&quot; Then&#xD;&#xA;            Throw New BusinessRuleException(&quot;Test_Id cannot be -1.&quot;)&#xD;&#xA;        End If&#xD;&#xA;&#xD;&#xA;        If String.IsNullOrEmpty(row(&quot;First_Name&quot;)?.ToString()) Then&#xD;&#xA;            Throw New BusinessRuleException(&quot;First_Name cannot be null or empty.&quot;)&#xD;&#xA;        End If&#xD;&#xA;        If row(&quot;First_Name&quot;).ToString() = &quot;-1&quot; Then&#xD;&#xA;            Throw New BusinessRuleException(&quot;First_Name cannot be -1.&quot;)&#xD;&#xA;        End If&#xD;&#xA;&#xD;&#xA;        If String.IsNullOrEmpty(row(&quot;Last_Name&quot;)?.ToString()) Then&#xD;&#xA;            Throw New BusinessRuleException(&quot;Last_Name cannot be null or empty.&quot;)&#xD;&#xA;        End If&#xD;&#xA;        If row(&quot;Last_Name&quot;).ToString() = &quot;-1&quot; Then&#xD;&#xA;            Throw New BusinessRuleException(&quot;Last_Name cannot be -1.&quot;)&#xD;&#xA;        End If&#xD;&#xA;&#xD;&#xA;        If String.IsNullOrEmpty(row(&quot;City&quot;)?.ToString()) Then&#xD;&#xA;            Throw New BusinessRuleException(&quot;City cannot be null or empty.&quot;)&#xD;&#xA;        End If&#xD;&#xA;        If row(&quot;City&quot;).ToString() = &quot;-1&quot; Then&#xD;&#xA;            Throw New BusinessRuleException(&quot;City cannot be -1.&quot;)&#xD;&#xA;        End If&#xD;&#xA;&#xD;&#xA;        If String.IsNullOrEmpty(row(&quot;Address&quot;)?.ToString()) Then&#xD;&#xA;            Throw New BusinessRuleException(&quot;Address cannot be null or empty.&quot;)&#xD;&#xA;        End If&#xD;&#xA;        If row(&quot;Address&quot;).ToString() = &quot;-1&quot; Then&#xD;&#xA;            Throw New BusinessRuleException(&quot;Address cannot be -1.&quot;)&#xD;&#xA;        End If&#xD;&#xA;&#xD;&#xA;        If String.IsNullOrEmpty(row(&quot;Telephone&quot;)?.ToString()) Then&#xD;&#xA;            Throw New BusinessRuleException(&quot;Telephone cannot be null or empty.&quot;)&#xD;&#xA;        End If&#xD;&#xA;        If row(&quot;Telephone&quot;).ToString() = &quot;-1&quot; Then&#xD;&#xA;            Throw New BusinessRuleException(&quot;Telephone cannot be -1.&quot;)&#xD;&#xA;        End If&#xD;&#xA;&#xD;&#xA;        ' Dacă verificările trec, adaugă un rezultat de succes&#xD;&#xA;        DataTableResults.Rows.Add(row(&quot;TestId&quot;), &quot;Success&quot;, &quot;&quot;, DateTime.Now)&#xD;&#xA;&#xD;&#xA;    Catch ex As BusinessRuleException&#xD;&#xA;        ' Adaugă eroarea în DataTableResults&#xD;&#xA;        DataTableResults.Rows.Add(row(&quot;TestId&quot;), &quot;Failed&quot;, ex.Message, DateTime.Now)&#xD;&#xA;&#xD;&#xA;        ' Scrie DataTableResults într-un fișier CSV înainte de oprire&#xD;&#xA;        Dim csvFilePath As String = &quot;D:\Facultate\An3\RPA\TestResults.csv&quot;&#xD;&#xA;        Using writer As New StreamWriter(csvFilePath)&#xD;&#xA;            ' Scrie antetul fișierului CSV&#xD;&#xA;            writer.WriteLine(String.Join(&quot;,&quot;, DataTableResults.Columns.Cast(Of DataColumn).Select(Function(c) c.ColumnName)))&#xD;&#xA;&#xD;&#xA;            ' Scrie fiecare rând din DataTableResults&#xD;&#xA;            For Each resultRow As DataRow In DataTableResults.Rows&#xD;&#xA;                writer.WriteLine(String.Join(&quot;,&quot;, resultRow.ItemArray.Select(Function(field) field.ToString())))&#xD;&#xA;            Next&#xD;&#xA;        End Using&#xD;&#xA;&#xD;&#xA;        ' Notifică utilizatorul și oprește execuția&#xD;&#xA;        Console.WriteLine($&quot;Error detected for TestId {row(&quot;TestId&quot;)}: {ex.Message}&quot;)&#xD;&#xA;        Console.WriteLine($&quot;Results saved to {csvFilePath}&quot;)&#xD;&#xA;        Environment.Exit(1) ' Oprește execuția complet&#xD;&#xA;    End Try&#xD;&#xA;Next" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="387.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_9">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="TestId">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TestId" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="First_Name">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="First_Name" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Last_Name">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Last_Name" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="City">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="City" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Address">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Address" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Telephone">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Telephone" />
+              </InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="DataTableValoriTest">
+                <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DataTableValoriTest" />
+              </InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="DataTableResults">
+                <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DataTableResults" />
+              </InArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="452.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="496,725.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="DataTableResults.Rows.Add(TestId, &quot;Failed&quot;,  exception, DateTime.Now)&#xA;                " DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="433.6,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_10">
+                <ui:InvokeCode.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="exception">[exception.Message]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="TestId">[TestId]</InArgument>
+                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DataTableResults">[DataTableResults]</InOutArgument>
+                </ui:InvokeCode.Arguments>
+              </ui:InvokeCode>
+              <ui:AppendWriteCsvFile PathResource="{x:Null}" AddHeaders="True" CsvAction="Write" DataTable="[DataTableResults]" Delimitator="Comma" DelimitatorForViewModel="Comma" DisplayName="Write CSV" FilePath="D:\Facultate\An3\RPA\TestResults.csv" sap:VirtualizedContainerService.HintSize="433.6,204" sap2010:WorkflowViewState.IdRef="AppendWriteCsvFile_8" ShouldQuote="True" />
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="' Dacă dorești să oprești tot procesul:&#xD;&#xA;        Environment.Exit(1)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="433.6,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_12">
+                <ui:InvokeCode.Arguments>
+                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                </ui:InvokeCode.Arguments>
+              </ui:InvokeCode>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="452.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="496,520.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="DataTableResults.Rows.Add(TestId, &quot;Failed&quot;,  exception, DateTime.Now)&#xA;                " DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="433.6,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_11">
+                <ui:InvokeCode.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="exception">[exception.Message]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="TestId">[TestId]</InArgument>
+                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DataTableResults">[DataTableResults]</InOutArgument>
+                </ui:InvokeCode.Arguments>
+              </ui:InvokeCode>
+              <ui:AppendWriteCsvFile PathResource="{x:Null}" AddHeaders="True" CsvAction="Write" DataTable="[DataTableResults]" Delimitator="Comma" DelimitatorForViewModel="Comma" DisplayName="Write CSV" FilePath="D:\Facultate\An3\RPA\TestResults.csv" sap:VirtualizedContainerService.HintSize="433.6,204" sap2010:WorkflowViewState.IdRef="AppendWriteCsvFile_9" ShouldQuote="True" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ParallelForEach x:TypeArguments="sd:DataRow" DisplayName="Parallel For Each" sap:VirtualizedContainerService.HintSize="548.8,1808" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_1" Values="[DataTableValoriTest.AsEnumerable()]">
+      <ActivityAction x:TypeArguments="sd:DataRow">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="in_dataRow" />
+        </ActivityAction.Argument>
+        <Sequence sap:VirtualizedContainerService.HintSize="499.2,1658.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="436.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[TestId]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_dataRow("TestId").ToString()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="436.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[First_Name]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_dataRow("First_Name").toString()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="436.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Last_Name]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_dataRow("Last_Name").ToString()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="436.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Address]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_dataRow("Address").ToString()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="436.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[City]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_dataRow("City").toString()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="436.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Telephone]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_dataRow("Telephone").ToString()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="First_Name = First_Name &amp; &quot;_&quot; &amp; TestId&#xD;&#xA;Last_Name =Last_Name &amp; &quot;_&quot; &amp; TestId&#xD;&#xA;City = City &amp; &quot;_&quot; &amp; TestId&#xD;&#xA;Address = Address &amp; &quot;_&quot; &amp; TestId" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="436.8,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+            <ui:InvokeCode.Arguments>
+              <InOutArgument x:TypeArguments="x:String" x:Key="First_Name">
+                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="First_Name" />
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="Last_Name">
+                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Last_Name" />
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="City">
+                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="City" />
+              </InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="Address">
+                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Address" />
+              </InOutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="TestId">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TestId" />
+              </InArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,368" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+            <TryCatch.Try>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ProccesWorkFlow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ProccesWorkFlow.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="TestId">[TestId]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="First_Name">[First_Name]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Last_Name">[Last_Name]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Address">[Address]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="City">[City]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Telephone">[Telephone]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="496,520.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeCode ContinueOnError="{x:Null}" Code=" DataTableResults.Rows.Add(TestId, &quot;Failed&quot;,  exception, DateTime.Now)&#xA;    " DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="433.6,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+                      <ui:InvokeCode.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="exception">
+                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="exception.Message" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="TestId">
+                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TestId" />
+                        </InArgument>
+                        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DataTableResults">
+                          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DataTableResults" />
+                        </InOutArgument>
+                      </ui:InvokeCode.Arguments>
+                    </ui:InvokeCode>
+                    <ui:AppendWriteCsvFile PathResource="{x:Null}" AddHeaders="True" CsvAction="Write" DataTable="[DataTableResults]" Delimitator="Comma" DelimitatorForViewModel="Comma" DisplayName="Write CSV" FilePath="D:\Facultate\An3\RPA\TestResults.csv" sap:VirtualizedContainerService.HintSize="433.6,204" sap2010:WorkflowViewState.IdRef="AppendWriteCsvFile_4" ShouldQuote="True" />
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="496,520.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeCode ContinueOnError="{x:Null}" Code=" DataTableResults.Rows.Add(TestId, &quot;Failed&quot;,  exception, DateTime.Now)&#xA;    " DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="433.6,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_7">
+                      <ui:InvokeCode.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="exception">[exception.Message]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="TestId">[TestId]</InArgument>
+                        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DataTableResults">[DataTableResults]</InOutArgument>
+                      </ui:InvokeCode.Arguments>
+                    </ui:InvokeCode>
+                    <ui:AppendWriteCsvFile PathResource="{x:Null}" AddHeaders="True" CsvAction="Write" DataTable="[DataTableResults]" Delimitator="Comma" DelimitatorForViewModel="Comma" DisplayName="Write CSV" FilePath="D:\Facultate\An3\RPA\TestResults.csv" sap:VirtualizedContainerService.HintSize="433.6,204" sap2010:WorkflowViewState.IdRef="AppendWriteCsvFile_5" ShouldQuote="True" />
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
+          <ui:AppendWriteCsvFile PathResource="{x:Null}" AddHeaders="True" CsvAction="Write" DataTable="[DataTableResults]" Delimitator="Comma" DelimitatorForViewModel="Comma" DisplayName="Write CSV" FilePath="D:\Facultate\An3\RPA\TestResults.csv" sap:VirtualizedContainerService.HintSize="436.8,204" sap2010:WorkflowViewState.IdRef="AppendWriteCsvFile_2" ShouldQuote="True" />
+        </Sequence>
+      </ActivityAction>
+    </ParallelForEach>
+  </Sequence>
+</Activity>
